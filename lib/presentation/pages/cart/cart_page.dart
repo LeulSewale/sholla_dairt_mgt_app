@@ -9,22 +9,28 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF9F9FC),
+      backgroundColor: AppColors.bgprimery,
       appBar: AppBar(
         title: const Text(
           'Product Catalogue',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications, color: AppColors.primery),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationPage()),
-              );
-            },
-          ),
+          CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.white,
+                    
+                  
+            child: IconButton(
+              icon: const Icon(Icons.notifications, color: AppColors.primery),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NotificationPage()),
+                );
+              },
+            ),
+              )
         ],
       ),
       body: Padding(
@@ -57,14 +63,14 @@ class CartPage extends StatelessWidget {
         child: Column(
           children: [
             _buildCartItem(
-              imagePath: 'assets/images/shola2.png',
+              imagePath: 'assets/images/shola2.webp',
               name: 'Raw Milk Per Liter',
               quantity: '2,000 Liter',
               price: '200,000',
             ),
             const SizedBox(height: 12),
             _buildCartItem(
-              imagePath: 'assets/images/shola3.png',
+              imagePath: 'assets/images/shola3.webp',
               name: '1 Liter Shola Milk',
               quantity: '1,000 Piece',
               price: '192,882',
@@ -170,7 +176,7 @@ class CartPage extends StatelessWidget {
           _buildSummaryRow('Sub Total', '392,882 Birr'),
           const SizedBox(height: 6),
           _buildSummaryRow('VAT (15%)', '58,932 Birr'),
-          const Divider(height: 24, color: Color(0xFF0C4B88)),
+          const Divider(thickness: 2, height: 24, color: Color(0xFF0C4B88)),
           _buildSummaryRow('Total Amount', '451,841 Birr',
               valueColor: const Color(0xFF0C4B88), isBold: true),
         ],

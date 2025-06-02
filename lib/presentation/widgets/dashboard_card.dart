@@ -37,7 +37,7 @@ class DashboardCard extends StatelessWidget {
                     children: [
                       Container(
                         padding: const EdgeInsets.only(top: 10),
-                        child: Icon(icon, color: AppColors.primery, size: 36),
+                        child: Icon(icon, color: AppColors.primery, size: 45),
                       ),
                       Text(
                         title,
@@ -60,7 +60,12 @@ class DashboardCard extends StatelessWidget {
                 if (actionText != null && onActionPressed != null)
                   TextButton(
                     onPressed: onActionPressed,
-                    child: Text(actionText!),
+                    child: Text(
+                      actionText!,
+                      style: const TextStyle(
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
                   ),
               ],
             ),

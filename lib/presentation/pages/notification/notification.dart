@@ -86,6 +86,7 @@ class _NotificationPageState extends State<NotificationPage> {
             const SizedBox(height: 16),
             Expanded(
               child: Card(
+                elevation: 0,
                 child: ListView.builder(
                   itemCount: notifications.length,
                   itemBuilder: (context, index) {
@@ -114,9 +115,10 @@ class _NotificationPageState extends State<NotificationPage> {
                                   children: [
                                     Text(
                                       item['title']!,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 14,
+                                        overflow:isExpanded? TextOverflow.visible: TextOverflow.ellipsis
                                       ),
                                     ),
                                     const SizedBox(height: 4),
@@ -147,7 +149,7 @@ class _NotificationPageState extends State<NotificationPage> {
                                   });
                                 },
                                 child: Text(
-                                  isExpanded ? 'Hide Details' : 'View Details',
+                                  isExpanded ? 'Hide' : 'View',
                                   style:
                                       const TextStyle(color: Color(0xFF065699)),
                                 ),

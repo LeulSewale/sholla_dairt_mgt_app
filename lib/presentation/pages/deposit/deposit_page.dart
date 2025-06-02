@@ -42,15 +42,21 @@ class _DepositPageState extends State<DepositPage> {
       appBar: AppBar(
         title: const Text('Credite Management'),        
         actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications, color: AppColors.primery),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationPage()),
-              );
-            },
-          ),
+          CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.white,
+                    
+                  
+            child: IconButton(
+              icon: const Icon(Icons.notifications, color: AppColors.primery),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NotificationPage()),
+                );
+              },
+            ),
+              )
         ],
       ),
       body: SingleChildScrollView(
@@ -149,7 +155,7 @@ class _DepositPageState extends State<DepositPage> {
                       const Text('Remark',
                           style: TextStyle(fontWeight: FontWeight.bold)),
                       const SizedBox(height: 8),
-                      Text(
+                      const Text(
                         'Deposite fire credit',
                       ),
                       const SizedBox(height: 16),
@@ -245,7 +251,9 @@ class _DepositPageState extends State<DepositPage> {
             const SizedBox(height: 16),
 
             // Deposit History
-            Card(child: const DepositHistory()),
+            Card(
+                elevation: 0,
+              child: const DepositHistory()),
           ],
         ),
       ),

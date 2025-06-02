@@ -1,3 +1,4 @@
+import 'package:dairy_management/core/constants/app_constants.dart';
 import 'package:dairy_management/presentation/bloc/communication/communication_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,28 +50,24 @@ class _MessageCardState extends State<MessageCard> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ListTile(
           leading: Container(
-            padding: const EdgeInsets.only(left: 4),
+            padding: const EdgeInsets.all(4),
             decoration: BoxDecoration(
-              color: Colors.blue.withOpacity(0.1),
+              color: AppColors.bgprimery,
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Icon(Icons.message, color: Colors.blue),
+            child:  const Icon(Icons.message, color: AppColors.primery,)
           ),
           title: Text(
             widget.message.title,
-            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold,overflow: TextOverflow.ellipsis),
           ),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '${widget.message.date.day}/${widget.message.date.month}/${widget.message.date.year}',
-                style: TextStyle(color: Colors.grey[600], fontSize: 12),
-              ),
-            ],
+          subtitle: Text(
+            '${widget.message.date.day}/${widget.message.date.month}/${widget.message.date.year}',
+            style: TextStyle(color: Colors.grey[600], fontSize: 9),
           ),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
@@ -83,7 +80,9 @@ class _MessageCardState extends State<MessageCard> {
                     expanded = !expanded;
                   });
                 },
-                child: Text(expanded ? 'Hide Details' : 'View Details'),
+                child: Text(expanded ? 'Hide' : 'View',style: const TextStyle(
+                  decoration: TextDecoration.underline
+                ))
               ),
             ],
           ),
@@ -121,7 +120,7 @@ class _MessageCardState extends State<MessageCard> {
     }
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(12),

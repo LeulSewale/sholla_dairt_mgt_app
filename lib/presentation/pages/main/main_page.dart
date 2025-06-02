@@ -28,23 +28,43 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.bgprimery,
         key: _scaffoldKey,
         appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () => _scaffoldKey.currentState?.openDrawer(),
-          ),
+          backgroundColor: AppColors.bgprimery,
+          leading: 
+               Padding(
+                 padding: const EdgeInsets.only(left: 20.0),
+                 child: CircleAvatar(
+                        radius: 24,
+                        backgroundColor: Colors.white,
+                      
+                    
+                             child:IconButton(
+                             icon: const Icon(Icons.menu,color: AppColors.primery),
+                             onPressed: () => _scaffoldKey.currentState?.openDrawer(),
+                           ),),
+               ),
           title: Text(_getTitle()),
           actions: [
-            IconButton(
-              icon: const Icon(Icons.notifications, color: AppColors.primery),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => NotificationPage()),
-                );
-              },
-            ),
+               Padding(
+                 padding: const EdgeInsets.only(right: 20.0),
+                 child: CircleAvatar(
+                        radius: 24,
+                        backgroundColor: Colors.white,
+                      
+                    
+                             child: IconButton(
+                               icon: const Icon(Icons.notifications, color: AppColors.primery),
+                               onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NotificationPage()),
+                  );
+                               },
+                             ),
+                               ),
+               )
           ],
         ),
         drawer: const CustomDrawer(),

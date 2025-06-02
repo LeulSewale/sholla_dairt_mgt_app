@@ -25,15 +25,21 @@ class _MyOrdersState extends State<MyOrders> {
       appBar: AppBar(
         title: const Text('My Orders'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications, color: AppColors.primery),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationPage()),
-              );
-            },
-          ),
+          CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.white,
+                    
+                  
+            child: IconButton(
+              icon: const Icon(Icons.notifications, color: AppColors.primery),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NotificationPage()),
+                );
+              },
+            ),
+              )
         ],
       ),
       body: Padding(
@@ -128,36 +134,33 @@ class _OrderListCardState extends State<OrderListCard> {
           leading: Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Colors.blue.withOpacity(0.1),
+              color: AppColors.bgprimery,
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Icon(Icons.card_travel, color: Colors.blue),
+            child: const Icon(Icons.card_travel, color: AppColors.primery),
           ),
           title: Text(
             widget.message.title,
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold,overflow: TextOverflow.ellipsis),
           ),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '${widget.message.date.day}/${widget.message.date.month}/${widget.message.date.year}',
-                style: TextStyle(color: Colors.grey[600], fontSize: 12),
-              ),
-            ],
+          subtitle: Text(
+            '${widget.message.date.day}/${widget.message.date.month}/${widget.message.date.year}',
+            style: TextStyle(color: Colors.grey[600], fontSize: 12),
           ),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               _buildStatusChip(widget.message.status),
-              const SizedBox(width: 8),
+              // const SizedBox(width: 8),
               TextButton(
                 onPressed: () {
                   setState(() {
                     expanded = !expanded;
                   });
                 },
-                child: Text(expanded ? 'Hide Details' : 'View Details'),
+                child: Text(expanded ? 'Hide' : 'View' ,style: const TextStyle(
+                  decoration: TextDecoration.underline
+                )),
               ),
             ],
           ),

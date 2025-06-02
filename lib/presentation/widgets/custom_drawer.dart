@@ -1,5 +1,6 @@
 import 'package:dairy_management/core/constants/app_constants.dart';
 import 'package:dairy_management/presentation/pages/auth/login_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -52,7 +53,7 @@ class CustomDrawer extends StatelessWidget {
                   },
                 ),
                 _buildDrawerItem(
-                  icon: Icons.shopping_bag,
+                  icon: Icons.download_sharp,
                   title: 'My Orders',
                   onTap: () {
                     Navigator.of(context).pop();
@@ -68,7 +69,7 @@ class CustomDrawer extends StatelessWidget {
                   },
                 ),
                 _buildDrawerItem(
-                  icon: Icons.account_balance,
+                  icon: CupertinoIcons.money_dollar_circle,
                   title: 'Deposit Management',
                   onTap: () {
                     Navigator.of(context).pop();

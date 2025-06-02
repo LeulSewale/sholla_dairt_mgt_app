@@ -1,5 +1,6 @@
 import 'package:dairy_management/core/constants/app_constants.dart';
 import 'package:dairy_management/domain/entities/product.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/dashboard/dashboard_bloc.dart';
@@ -51,7 +52,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
                 // Balance Card
                 DashboardCard(
-                  icon: Icons.attach_money_outlined,
+                  icon:   CupertinoIcons.money_dollar_circle,
                   title: '${state.data.user.balance.toInt()},000 Birr',
                   subtitle: 'Your Balance',
                   description:
@@ -167,6 +168,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 0,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min, // Important for shrink-wrap

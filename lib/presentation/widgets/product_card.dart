@@ -12,12 +12,11 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    double aspectRatio = width / height;
     return LayoutBuilder(builder: (context, constraints) {
       return ConstrainedBox(
         constraints: const BoxConstraints(minHeight: 280),
         child: Card(
-          elevation: 1,
+          elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),

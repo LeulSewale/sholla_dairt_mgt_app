@@ -28,15 +28,21 @@ class _SendMessagePageState extends State<SendMessagePage> {
         title:
             const Text('Communications', style: TextStyle(color: Colors.black)),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications, color: AppColors.primery),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationPage()),
-              );
-            },
-          ),
+          CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.white,
+                    
+                  
+            child: IconButton(
+              icon: const Icon(Icons.notifications, color: AppColors.primery),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NotificationPage()),
+                );
+              },
+            ),
+              )
         ],
       ),
       body: Padding(
@@ -71,7 +77,7 @@ class _SendMessagePageState extends State<SendMessagePage> {
                             padding: const EdgeInsets.all(12),
                             margin: const EdgeInsets.only(right: 10),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF07529E),
+                              color: AppColors.primery,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: const Icon(Icons.checklist,
@@ -125,7 +131,7 @@ class _SendMessagePageState extends State<SendMessagePage> {
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF07529E),
+                            backgroundColor: AppColors.primery,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),

@@ -31,6 +31,7 @@ class OrderConfirmationPage extends StatelessWidget {
   Widget _buildAcceptedOrder(BuildContext context) {
     return Scaffold(
       body: Card(
+                elevation: 0,
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
@@ -129,6 +130,7 @@ class OrderConfirmationPage extends StatelessWidget {
     final TextEditingController commentController = TextEditingController();
 
     return Card(
+                elevation: 0,
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(

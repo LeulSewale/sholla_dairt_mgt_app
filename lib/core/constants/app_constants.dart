@@ -24,7 +24,15 @@ class AppConstants {
 }
 
 class AppColors {
-  static const primery = Color(0xFF065699);
+  static const primery = Color(0xFF075698);
+  static const bgprimery = Color(0xFFeff1f3);
+  static const yellowprimery = Color(0xFFff9100);
+  static const greenprimery = Color(0xFF13b665);
+  static const redprimery = Color(0xFFff0000);
+
+
+
+  
 
   static const secondary = Colors.white;
 }

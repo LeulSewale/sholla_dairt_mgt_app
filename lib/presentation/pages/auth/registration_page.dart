@@ -1,4 +1,5 @@
 import 'package:dairy_management/core/constants/app_constants.dart';
+import 'package:dairy_management/presentation/pages/auth/login_page.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -167,21 +168,25 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             // _submit,
                             () {
                           if (_formKey.currentState!.validate()) {
-                            Navigator.of(
-                              context,
-                            ).pushNamed('/otp-verification');
+                             Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const LoginPage(),
+                                          ),
+                                        );
                           }
                         },
                         // _submit,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
+                          backgroundColor: AppColors.primery,
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
                         child: const Text(
-                          'Next',
+                          'Sign Up',
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,

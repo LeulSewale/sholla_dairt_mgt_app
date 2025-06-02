@@ -1,3 +1,4 @@
+import 'package:dairy_management/core/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class CommunicationsInboxPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class CommunicationsInboxPage extends StatelessWidget {
           title: const Text(
         'Communications',
       )),
-      backgroundColor: const Color(0xFFF6F6F9),
+      backgroundColor: AppColors.bgprimery,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
@@ -32,7 +33,7 @@ class CommunicationsInboxPage extends StatelessWidget {
                     ),
                     child: const Row(
                       children: [
-                        Icon(Icons.search, color: Colors.blue),
+                        Icon(Icons.search, color: AppColors.primery),
                         SizedBox(width: 8),
                         Expanded(
                             child: Text("Search for Inbox",
@@ -46,7 +47,7 @@ class CommunicationsInboxPage extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                    color: Colors.blue.shade700,
+                    color: AppColors.primery,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: const Icon(Icons.filter_alt_outlined,
@@ -57,6 +58,7 @@ class CommunicationsInboxPage extends StatelessWidget {
             const SizedBox(height: 20),
             Expanded(
               child: Card(
+                elevation: 0,
                 child: ListView(
                   children: const [
                     MessageCard(
@@ -115,7 +117,7 @@ class _MessageCardState extends State<MessageCard> {
               const CircleAvatar(
                 radius: 20,
                 backgroundColor: Color(0xFFECECF6),
-                child: Icon(Icons.chat_sharp, color: Colors.blue),
+                child: Icon(Icons.chat_sharp, color: AppColors.primery),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -136,7 +138,7 @@ class _MessageCardState extends State<MessageCard> {
                     expanded = !expanded;
                   });
                 },
-                child: Text(expanded ? "Hide Message" : "View Message"),
+                child: Text(expanded ? "Hide" : "View"),
               )
             ],
           ),

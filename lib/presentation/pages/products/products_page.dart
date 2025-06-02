@@ -22,18 +22,25 @@ class _ProductsPageState extends State<ProductsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.bgprimery,
       appBar: AppBar(
         title: const Text('Product Catalogue'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications, color: AppColors.primery),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationPage()),
-              );
-            },
-          ),
+          CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.white,
+                    
+                  
+            child: IconButton(
+              icon: const Icon(Icons.notifications, color: AppColors.primery),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NotificationPage()),
+                );
+              },
+            ),
+              )
         ],
       ),
       body: Padding(

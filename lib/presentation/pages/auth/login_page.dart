@@ -1,4 +1,5 @@
 import 'package:dairy_management/core/constants/app_constants.dart';
+import 'package:dairy_management/presentation/pages/auth/registration_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/auth/auth_bloc.dart';
@@ -235,14 +236,24 @@ class _LoginPageState extends State<LoginPage> {
                                     ),
                                     GestureDetector(
                                       onTap: () {
-                                        // Navigate to sign up page
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const RegistrationPage(),
+                                          ),
+                                        );
                                       },
+                                      //  style: const TextStyle(
+                                      //   decoration: TextDecoration.underline,
+                                      // ),
                                       child: const Text(
                                         'Sign Up',
                                         style: TextStyle(
                                           color: AppColors.primery,
                                           fontSize: 16,
                                           fontWeight: FontWeight.w600,
+                                          decoration: TextDecoration.underline,
                                         ),
                                       ),
                                     ),

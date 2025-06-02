@@ -46,7 +46,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         description:
             'Sholla Raw Milk offers fresh, unprocessed milk sourced directly from local farms—pure, nutritious, and packed with natural flavor for a healthier lifestyle.',
         price: 100,
-        imageUrl: 'assets/images/shola1.png',
+        imageUrl: 'assets/images/shola1.webp',
         category: 'Milk',
         isAvailable: true,
       ),
@@ -56,7 +56,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         description:
             'Gain insights into inventory trends, turnover rates, and sales performance with detailed reports.',
         price: 100,
-        imageUrl: 'assets/images/shola2.png',
+        imageUrl: 'assets/images/shola2.webp',
         category: 'Milk',
         isAvailable: true,
       ),
@@ -66,7 +66,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         description:
             'Gain insights into inventory trends, turnover rates, and sales performance with detailed reports.',
         price: 100,
-        imageUrl: 'assets/images/shola3.png',
+        imageUrl: 'assets/images/shola3.webp',
         category: 'Milk',
         isAvailable: true,
       ),
@@ -76,7 +76,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         description:
             'Gain insights into inventory trends, turnover rates, and sales performance with detailed reports.',
         price: 100,
-        imageUrl: 'assets/images/shola4.png',
+        imageUrl: 'assets/images/shola4.webp',
         category: 'Ice Cream',
         isAvailable: true,
       ),

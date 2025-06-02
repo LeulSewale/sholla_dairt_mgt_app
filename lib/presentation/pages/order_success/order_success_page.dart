@@ -1,3 +1,4 @@
+import 'package:dairy_management/core/constants/app_constants.dart';
 import 'package:dairy_management/presentation/pages/notification/notification.dart';
 import 'package:flutter/material.dart';
 
@@ -7,18 +8,25 @@ class OrderSuccessPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.bgprimery,
       appBar: AppBar(
         title: const Text('Product Catalogue'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationPage()),
-              );
-            },
-          ),
+          CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.white,
+                    
+                  
+            child: IconButton(
+              icon: const Icon(Icons.notifications, color: AppColors.primery),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NotificationPage()),
+                );
+              },
+            ),
+              )
         ],
       ),
       body: Padding(
@@ -31,11 +39,11 @@ class OrderSuccessPage extends StatelessWidget {
               width: 120,
               height: 120,
               decoration: BoxDecoration(
-                color: const Color(0xFF1976D2),
+                color: AppColors.primery,
                 borderRadius: BorderRadius.circular(60),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF1976D2).withOpacity(0.3),
+                    color: AppColors.primery.withOpacity(0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -51,7 +59,7 @@ class OrderSuccessPage extends StatelessWidget {
                       width: 20,
                       height: 20,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF1976D2),
+                        color: AppColors.primery,
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -63,7 +71,7 @@ class OrderSuccessPage extends StatelessWidget {
                       width: 15,
                       height: 15,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF1976D2),
+                        color: AppColors.primery,
                         borderRadius: BorderRadius.circular(7.5),
                       ),
                     ),
@@ -75,7 +83,7 @@ class OrderSuccessPage extends StatelessWidget {
                       width: 25,
                       height: 25,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF1976D2),
+                        color: AppColors.primery,
                         borderRadius: BorderRadius.circular(12.5),
                       ),
                     ),
@@ -87,7 +95,7 @@ class OrderSuccessPage extends StatelessWidget {
                       width: 18,
                       height: 18,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF1976D2),
+                        color: AppColors.primery,
                         borderRadius: BorderRadius.circular(9),
                       ),
                     ),
@@ -98,7 +106,7 @@ class OrderSuccessPage extends StatelessWidget {
                       width: 80,
                       height: 80,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF1976D2),
+                        color: AppColors.primery,
                         borderRadius: BorderRadius.circular(40),
                       ),
                       child: const Icon(
@@ -112,7 +120,7 @@ class OrderSuccessPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-
+      
             // Success Title
             const Text(
               'Order Placed Successfully',
@@ -124,7 +132,7 @@ class OrderSuccessPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
-
+      
             // Success Message
             const Text(
               'Your orders has been placed successfully,\nwe will review and send the status soon',
@@ -136,7 +144,7 @@ class OrderSuccessPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 60),
-
+      
             // Finish Button
             SizedBox(
               width: double.infinity,
@@ -147,7 +155,7 @@ class OrderSuccessPage extends StatelessWidget {
                   Navigator.of(context).pop();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF1976D2),
+                  backgroundColor: AppColors.primery,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),

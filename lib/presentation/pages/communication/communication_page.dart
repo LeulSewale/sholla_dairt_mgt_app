@@ -24,22 +24,29 @@ class _CommunicationPageState extends State<CommunicationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.bgprimery,
       appBar: AppBar(
         title: const Text('Communication'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications, color: AppColors.primery),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationPage()),
-              );
-            },
-          ),
+          CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.white,
+                    
+                  
+            child: IconButton(
+              icon: const Icon(Icons.notifications, color: AppColors.primery),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NotificationPage()),
+                );
+              },
+            ),
+              )
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -68,6 +75,7 @@ class _CommunicationPageState extends State<CommunicationPage> {
                     icon: const Icon(Icons.message),
                     label: const Text('Send Message'),
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primery,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                     ),
                   ),
@@ -86,6 +94,8 @@ class _CommunicationPageState extends State<CommunicationPage> {
                     icon: const Icon(Icons.inbox),
                     label: const Text('Inbox'),
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primery,
+
                       padding: const EdgeInsets.symmetric(vertical: 16),
                     ),
                   ),
@@ -131,7 +141,7 @@ class _CommunicationPageState extends State<CommunicationPage> {
               ],
             ),
             const SizedBox(height: 16),
-            const Expanded(child: Card(child: MessageList())),
+            const Expanded(child: Card (elevation: 0,child: MessageList())),
           ],
         ),
       ),

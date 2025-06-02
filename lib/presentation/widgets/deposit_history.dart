@@ -1,3 +1,4 @@
+import 'package:dairy_management/core/constants/app_constants.dart';
 import 'package:dairy_management/presentation/bloc/deposit/deposit_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,31 +46,30 @@ class DepositCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      margin: const EdgeInsets.only(bottom: 8),
       child: ListTile(
         leading: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: Colors.blue.withOpacity(0.1),
+            color: AppColors.bgprimery,
             borderRadius: BorderRadius.circular(8),
           ),
-          child: const Icon(Icons.account_balance, color: Colors.blue),
+          child: const Icon(Icons.account_balance, color:AppColors.primery),
         ),
         title: Text(
           'Deposit #${deposit.id}',
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 12,fontWeight: FontWeight.bold),
         ),
-        subtitle: Text('${deposit.amount.toInt()},000 Birr'),
+        subtitle: Text('${deposit.amount.toInt()},000 Birr',
+          style: const TextStyle(fontSize: 12,),),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             _buildStatusChip(deposit.status),
-            const SizedBox(width: 8),
             TextButton(
               onPressed: () {
                 // View deposit details
               },
-              child: const Text('View Details'),
+              child: const Text('View'),
             ),
           ],
         ),
